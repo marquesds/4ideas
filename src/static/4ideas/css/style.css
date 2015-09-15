@@ -1,3 +1,26 @@
+body {
+  margin-top: 80px;
+}
+
+::selection {
+    background: rgba(123, 31, 162, 0.6);
+    color: #FFF;
+}
+
+small {
+  font-size: 12px;
+}
+
+.dropdown-menu li > a {
+  font-size: 14px !important;
+}
+
+.btn-fixed {
+  position: fixed;
+  top: 90%;
+  bottom: 10%;
+}
+
 /* Begin NiceScroll Customization */
 #ascrail2000 {
     z-index: 10000 !important;

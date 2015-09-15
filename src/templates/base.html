@@ -1,51 +1,107 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>4Ideas {% block title %}{% endblock %}</title>
+<head>
+  <meta charset="utf-8">
+  <title>4Ideas {% block title %}{% endblock %}</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/bootstrap.min.css' %}">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static '4ideas/css/bootstrap.min.css' %}">
 
-    <!-- Material CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/material.min.css' %}">
-    <link rel="stylesheet" href="{% static '4ideas/css/material-fullpalette.min.css' %}">
-    <link rel="stylesheet" href="{% static '4ideas/css/ripples.min.css' %}">
+  <!-- Material CSS -->
+  <link rel="stylesheet" href="{% static '4ideas/css/material.min.css' %}">
+  <link rel="stylesheet" href="{% static '4ideas/css/material-fullpalette.min.css' %}">
+  <link rel="stylesheet" href="{% static '4ideas/css/ripples.min.css' %}">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/style.css' %}">
-    {% block css %}{% endblock %}
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static '4ideas/css/style.css' %}">
+  {% block css %}{% endblock %}
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="{% static '4ideas/css/roboto.min.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="{% static '4ideas/css/roboto.min.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <!-- Icon -->
-    <link rel="shortcut icon" href="{% static '4ideas/img/idea.png' %}" />
+  <!-- Icon -->
+  <link rel="shortcut icon" href="{% static '4ideas/img/idea.png' %}" />
 
-  </head>
-  <body>
-    <h1>Hello World!!!</h1>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-material-purple-700">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">4Ideas</a>
+      </div>
 
-    {% block content %}{% endblock %}
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-    <!-- Jquery -->
-    <script type="text/javascript" src="{% static '4ideas/js/jquery-2.1.4.min.js' %}"></script>
+  <div class="row">
+    <div class="col-sm-3">
+      {% block left-content %}{% endblock %}
+    </div>
+    <div class="col-sm-6">
+      {% block middle-content %}{% endblock %}
+    </div>
+    <div class="col-sm-3">
+      {% block right-content %}{% endblock %}
+    </div>
+  </div>
 
-    <!-- Bootstrap JavaScript -->
-    <script type="text/javascript" src="{% static '4ideas/js/bootstrap.min.js' %}"></script>
+  <!-- Jquery -->
+  <script type="text/javascript" src="{% static '4ideas/js/jquery-2.1.4.min.js' %}"></script>
 
-    <!-- Material JavaScript -->
-    <script type="text/javascript" src="{% static '4ideas/js/material.min.js' %}"></script>
-    <script type="text/javascript" src="{% static '4ideas/js/ripples.min.js' %}"></script>
+  <!-- Bootstrap JavaScript -->
+  <script type="text/javascript" src="{% static '4ideas/js/bootstrap.min.js' %}"></script>
 
-    <!-- NiceScroll JavaScript -->
-    <script type="text/javascript" src="{% static '4ideas/js/jquery.nicescroll.min.js' %}"></script>
+  <!-- Material JavaScript -->
+  <script type="text/javascript" src="{% static '4ideas/js/material.min.js' %}"></script>
+  <script type="text/javascript" src="{% static '4ideas/js/ripples.min.js' %}"></script>
 
-    <!-- Custom JavaScript -->
-    <script type="text/javascript" src="{% static '4ideas/js/main.js' %}"></script>
-    {% block js %}{% endblock %}
+  <!-- NiceScroll JavaScript -->
+  <script type="text/javascript" src="{% static '4ideas/js/jquery.nicescroll.min.js' %}"></script>
 
-  </body>
+  <!-- Custom JavaScript -->
+  <script type="text/javascript" src="{% static '4ideas/js/main.js' %}"></script>
+  {% block js %}{% endblock %}
+
+</body>
 </html>
