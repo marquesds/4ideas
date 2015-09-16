@@ -10,6 +10,23 @@ h2 {
   font-size: 12px;
 }
 
+.score {
+  margin-top: 7px;
+  margin-left: -10%;
+}
+
+.score img {
+  width: 30px
+}
+
+.score span {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: -2%;
+  margin-right: 5%;
+  display: inline-block;
+}
+
 .img-responsive {
   display: block;
   height: auto;
@@ -70,6 +87,7 @@ h2 {
 
 .profile-panel .user-name {
   color: #FFF;
+  margin-left: -10%;
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;

@@ -7,6 +7,8 @@ $(document).ready(
   }
 );
 
+$('img').tooltip();
+
 $(function () {
     $("#img-cover-timeline").mouseenter(function () {
       $("#timeline-change-cover").stop().fadeIn();
