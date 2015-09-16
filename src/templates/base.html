@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="{% static '4ideas/css/material-fullpalette.min.css' %}">
   <link rel="stylesheet" href="{% static '4ideas/css/ripples.min.css' %}">
 
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="{% static '4ideas/css/animate.css' %}">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static '4ideas/css/style.css' %}">
   {% block css %}{% endblock %}
@@ -26,7 +29,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top navbar-material-purple-700">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-info shadow-z-1">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -74,16 +77,8 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div class="row">
-    <div class="col-sm-3">
-      {% block left-content %}{% endblock %}
-    </div>
-    <div class="col-sm-6">
-      {% block middle-content %}{% endblock %}
-    </div>
-    <div class="col-sm-3">
-      {% block right-content %}{% endblock %}
-    </div>
+  <div class="container-fluid">
+    {% block content %}{% endblock %}
   </div>
 
   <!-- Jquery -->
@@ -98,6 +93,9 @@
 
   <!-- NiceScroll JavaScript -->
   <script type="text/javascript" src="{% static '4ideas/js/jquery.nicescroll.min.js' %}"></script>
+
+  <!-- Bootstrap Notify JavaScript -->
+  <script type="text/javascript" src="{% static '4ideas/js/bootstrap-notify.min.js' %}"></script>
 
   <!-- Custom JavaScript -->
   <script type="text/javascript" src="{% static '4ideas/js/main.js' %}"></script>

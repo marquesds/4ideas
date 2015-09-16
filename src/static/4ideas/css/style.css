@@ -3,8 +3,7 @@ body {
 }
 
 ::selection {
-    background: rgba(123, 31, 162, 0.6);
-    color: #FFF;
+    background: rgba(3, 169, 244, 0.6);
 }
 
 small {
@@ -12,7 +11,7 @@ small {
 }
 
 .dropdown-menu li > a {
-  font-size: 14px !important;
+  font-size: 13px !important;
 }
 
 .btn-fixed {
@@ -26,3 +25,14 @@ small {
     z-index: 10000 !important;
 }
 /* End NiceScroll Customization */
+
+/* Begin Bootstrap Notify Customization */
+[data-notify="container"] {
+  position: absolute;
+  border-radius: 3px;
+  background-color: #454545;
+  opacity: 0.8;
+  width: 300px;
+  margin-top: 60px !important;
+}
+/* End Bootstrap Notify Customization */
