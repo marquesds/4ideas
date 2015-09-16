@@ -6,6 +6,10 @@ h2 {
   margin-top: -5px !important;
 }
 
+.text-muted > i {
+  font-size: 12px;
+}
+
 .img-responsive {
   display: block;
   height: auto;
@@ -112,13 +116,22 @@ h2 {
 .timeline-post .panel-body {
 }
 
-#post-area {
+.post-area {
+  padding: 5px;
+  margin-top: 8px;
+}
+
+.post-area:focus {
   padding: 5px;
   margin-top: 8px;
 }
 
 .post-type {
   margin-top: 7px;
+}
+
+#postModal {
+  margin-top: 150px;
 }
 
 .timeline-centered {

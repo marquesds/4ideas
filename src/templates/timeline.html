@@ -27,7 +27,6 @@
   </div>
   <div class="col-sm-6 col-xs-12">
     <div class="row">
-
       <div class="panel panel-default timeline-post shadow-z-3">
         <div class="panel-body">
           <div class="row">
@@ -35,16 +34,13 @@
               <img class="img-user img-rounded pull-left" src="{% static '4ideas/img/lucas.jpg' %}" alt="Lucas Marques" />
             </div>
             <div class="col-xs-11">
-              <textarea id="post-area" class="form-control" rows="1" cols="40" placeholder="What are you working on?" autofocus></textarea>
+              <textarea class="form-control post-area" rows="1" cols="40" placeholder="What are you working on?"></textarea>
               <div class="row">
                 <div class="col-xs-12">
                   <div class="pull-left post-type">
-                    <a><i class="glyphicon glyphicon-file text-info"></i></a>
-                    &nbsp;&nbsp;
-                    <a><i class="glyphicon glyphicon-picture text-info"></i></a>
-                    &nbsp;&nbsp;
-                    <a><i class="glyphicon glyphicon-facetime-video text-info"></i></a>
-                    &nbsp;&nbsp;
+                    <a><i class="mdi-editor-attach-file text-info"></i></a>
+                    <a><i class="mdi-image-photo text-info"></i></a>
+                    <a><i class="mdi-av-videocam text-info"></i></a>
                   </div>
                   <div class="pull-right">
                     <button type="submit" class="btn btn-info pull-right">Post</button>
@@ -58,7 +54,7 @@
       </div>
 
       <div class="timeline-centered">
-
+        <button class="btn btn-fab btn-raised btn-material-red btn-fixed" data-toggle="modal" data-target="#postModal"><i class="mdi-content-add"></i></button>
         <article class="timeline-entry">
 
           <div class="timeline-entry-inner">
@@ -87,7 +83,7 @@
                   <h2>
                     <a href="#">Lucas Marques</a> <span>posted a status update</span>
                   </h2>
-                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                  <p><small class="text-muted"><i class="mdi-action-query-builder"></i> 11 hours ago</small></p>
                 </div>
               </div>
               <br>
@@ -126,7 +122,7 @@
                   <h2>
                     <h2><a href="#">Job Meeting</a></h2>
                   </h2>
-                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                  <p><small class="text-muted"><i class="mdi-action-query-builder"></i> 11 hours ago</small></p>
                 </div>
               </div>
               <br>
@@ -163,7 +159,7 @@
                     </div>
                   </div>
                   <h2><a href="#">Lucas Marques</a> <span>checked in at</span> <a href="#">Laborator</a></h2>
-                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                  <p><small class="text-muted"><i class="mdi-action-query-builder"></i> 11 hours ago</small></p>
                 </div>
               </div>
               <br>
@@ -202,7 +198,7 @@
                     </div>
                   </div>
                   <h2><a href="#">Lucas Marques</a> <span>changed his</span> <a href="#">Profile Picture</a></h2>
-                  <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago</small></p>
+                  <p><small class="text-muted"><i class="mdi-action-query-builder"></i> 11 hours ago</small></p>
                 </div>
               </div>
               <br>
@@ -226,6 +222,34 @@
           </div>
 
         </article>
+      </div>
+    </div>
+    <div id="postModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-1">
+                <img class="img-user img-rounded pull-left" src="{% static '4ideas/img/lucas.jpg' %}" alt="Lucas Marques" />
+              </div>
+              <div class="col-xs-11">
+                <textarea class="form-control post-area" rows="1" cols="40" placeholder="What are you working on?"></textarea>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="pull-left post-type">
+                      <a><i class="mdi-editor-attach-file text-info"></i></a>
+                      <a><i class="mdi-image-photo text-info"></i></a>
+                      <a><i class="mdi-av-videocam text-info"></i></a>
+                    </div>
+                    <div class="pull-right">
+                      <button type="submit" class="btn btn-info pull-right" data-dismiss="modal">Post</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

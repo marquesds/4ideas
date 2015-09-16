@@ -10,14 +10,38 @@ small {
   font-size: 12px;
 }
 
+#logo-img {
+    height: 40px;
+    float: left;
+    margin-top: -8px;
+}
+
+#img-user-menu {
+  width: 20px;
+}
+
 .dropdown-menu li > a {
+  font-size: 13px !important;
+}
+
+.dropdown-menu li > a > b {
   font-size: 13px !important;
 }
 
 .btn-fixed {
   position: fixed;
+  z-index: 10;
   top: 90%;
+  left: 73%;
   bottom: 10%;
+}
+
+.navbar-form {
+  margin-top: 12px !important;
+}
+
+.input-search {
+    width: 250%;
 }
 
 /* Begin NiceScroll Customization */
@@ -36,3 +60,33 @@ small {
   margin-top: 60px !important;
 }
 /* End Bootstrap Notify Customization */
+
+@media ( max-width: 1280px) {
+    .input-search {
+        width: 200%;
+    }
+}
+
+@media ( max-width: 1150px) {
+    .input-search {
+        width: 150%;
+    }
+}
+
+@media ( max-width: 1020px) {
+    .input-search {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    .btn-fixed {
+      left: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn-fixed {
+      left: 87%;
+    }
+}

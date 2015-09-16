@@ -8,7 +8,7 @@ $(document).ready(
 );
 
 $(function () {
-    $("#img-cover-timeline").hover(function () {
+    $("#img-cover-timeline").mouseenter(function () {
       $("#timeline-change-cover").stop().fadeIn();
     });
 });
