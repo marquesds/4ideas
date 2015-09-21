@@ -1,9 +1,10 @@
 body {
   margin-top: 80px;
+  background-color: #F5F8FA;
 }
 
 ::selection {
-    background: rgba(3, 169, 244, 0.6);
+    background: rgba(0, 145, 234, 0.6);
 }
 
 small {
@@ -11,9 +12,9 @@ small {
 }
 
 #logo-img {
-    height: 40px;
+    height: 30px;
     float: left;
-    margin-top: -8px;
+    margin-top: -3px;
 }
 
 #img-user-menu {

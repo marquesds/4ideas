@@ -10,7 +10,7 @@
 {% block content %}
 <div class="row">
   <div class="col-sm-3 hidden-xs">
-    <div class="profile-panel shadow-z-3">
+    <div class="profile-panel shadow-z-1">
       <a class="btn" id="timeline-change-cover" href="#">Change Cover</a>
       <img id="img-cover-timeline" src="{% static '4ideas/img/cover.jpeg' %}" alt="" />
       <div class="user-info">
@@ -35,7 +35,7 @@
   </div>
   <div class="col-sm-6 col-xs-12">
     <div class="row">
-      <div class="panel panel-default timeline-post shadow-z-3">
+      <div class="panel panel-default timeline-post shadow-z-1">
         <div class="panel-body">
           <div class="row">
             <div class="col-xs-1">
@@ -45,11 +45,13 @@
               <textarea class="form-control post-area" rows="1" cols="40" placeholder="What are you working on?"></textarea>
               <div class="row">
                 <div class="col-xs-12">
+                  <!---
                   <div class="pull-left post-type">
                     <a><i class="mdi-editor-attach-file text-info"></i></a>
                     <a><i class="mdi-image-photo text-info"></i></a>
                     <a><i class="mdi-av-videocam text-info"></i></a>
                   </div>
+                  --->
                   <div class="pull-right">
                     <button type="submit" class="btn btn-info pull-right">Post</button>
                   </div>
@@ -71,7 +73,7 @@
               <i class="icon mdi-editor-format-align-justify"></i>
             </div>
 
-            <div class="timeline-label shadow-z-3">
+            <div class="timeline-label shadow-z-1">
               <div class="row">
                 <div class="col-xs-1">
                   <img class="img-user img-rounded pull-left" src="{% static '4ideas/img/lucas.jpg' %}" alt="Lucas Marques" />
@@ -110,7 +112,7 @@
               <i class="icon mdi-notification-event-note"></i>
             </div>
 
-            <div class="timeline-label shadow-z-3">
+            <div class="timeline-label shadow-z-1">
               <div class="row">
                 <div class="col-xs-1">
                   <img class="img-user img-rounded pull-left" src="{% static '4ideas/img/lucas.jpg' %}" alt="Lucas Marques" />
@@ -149,7 +151,7 @@
               <i class="icon mdi-maps-place"></i>
             </div>
 
-            <div class="timeline-label shadow-z-3">
+            <div class="timeline-label shadow-z-1">
               <div class="row">
                 <div class="col-xs-1">
                   <img class="img-user img-rounded pull-left" src="{% static '4ideas/img/lucas.jpg' %}" alt="Lucas Marques" />
@@ -188,7 +190,7 @@
               <i class="icon mdi-image-photo"></i>
             </div>
 
-            <div class="timeline-label shadow-z-3">
+            <div class="timeline-label shadow-z-1">
               <div class="row">
                 <div class="col-xs-1">
                   <img class="img-user img-rounded pull-left" src="{% static '4ideas/img/lucas.jpg' %}" alt="Lucas Marques" />
@@ -244,11 +246,13 @@
                 <textarea class="form-control post-area" rows="1" cols="40" placeholder="What are you working on?"></textarea>
                 <div class="row">
                   <div class="col-xs-12">
+                    <!--
                     <div class="pull-left post-type">
                       <a><i class="mdi-editor-attach-file text-info"></i></a>
                       <a><i class="mdi-image-photo text-info"></i></a>
                       <a><i class="mdi-av-videocam text-info"></i></a>
                     </div>
+                  -->
                     <div class="pull-right">
                       <button type="submit" class="btn btn-info pull-right" data-dismiss="modal">Post</button>
                     </div>
@@ -262,7 +266,7 @@
     </div>
   </div>
   <div class="col-sm-3 hidden-xs">
-    <div class="panel panel-default shadow-z-3">
+    <div class="panel panel-default shadow-z-1">
       <div class="panel-body">
         <h1>Yo!</h1>
       </div>
@@ -274,6 +278,6 @@
 {% block js %}
 <script type="text/javascript" src="{% static '4ideas/js/autogrow.min.js' %}"></script>
 <script type="text/javascript">
-$('#post-area').autogrow();
+$('.post-area').autogrow();
 </script>
 {% endblock %}
