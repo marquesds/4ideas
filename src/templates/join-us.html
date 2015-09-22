@@ -1,0 +1,44 @@
+{% extends 'base-accounts.html' %}
+
+{% block title %}
+- Join us!
+{% endblock %}
+
+{% block content %}
+<style>
+a {
+  margin-right: 15px;
+}
+
+.panel-login {
+  height: 50%;
+  top: 26%;
+}
+</style>
+<form method="post">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-control-wrapper"><input id="{{ form.name.id_for_label }}" name="{{ form.name.name }}" class="form-control empty" type="text" placeholder="Full Name" autofocus></div>
+    </div>
+    <br><br>
+    <div class="col-xs-12">
+      <div class="form-control-wrapper"><input id="{{ form.username.id_for_label }}" name="{{ form.username.name }}" class="form-control empty" type="text" placeholder="Username"></div>
+    </div>
+    <br><br>
+    <div class="col-xs-12">
+      <div class="form-control-wrapper"><input id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" class="form-control empty" type="email" placeholder="Email"></div>
+    </div>
+    <br><br>
+    <div class="col-xs-12">
+      <div class="form-control-wrapper"><input id="{{ form.password1.id_for_label }}" name="{{ form.password1.name }}" class="form-control empty" type="password" placeholder="Password"></div>
+    </div>
+    <br><br>
+    <div class="col-xs-12">
+      <div class="form-control-wrapper"><input id="{{ form.password2.id_for_label }}" name="{{ form.password2.name }}" class="form-control empty" type="password" placeholder="Confirm Password"></div>
+    </div>
+    <button type="submit" class="btn btn-fab btn-raised btn-material-red btn-login"><i class="mdi-navigation-arrow-forward"></i></button>
+    <a href="{% url 'accounts:login' %}" class="pull-right">Already have an account?</a>
+  </div>
+</form>
+{% endblock %}

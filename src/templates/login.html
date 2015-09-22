@@ -1,84 +1,48 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>4Ideas - Login</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/bootstrap.min.css' %}">
-
-    <!-- Material CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/material.min.css' %}">
-    <link rel="stylesheet" href="{% static '4ideas/css/material-fullpalette.min.css' %}">
-    <link rel="stylesheet" href="{% static '4ideas/css/ripples.min.css' %}">
-
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/animate.css' %}">
-
-    <!-- Hover CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/hover-min.css' %}">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static '4ideas/css/login.css' %}">
-
-    <!-- Icon -->
-    <link rel="shortcut icon" href="{% static '4ideas/img/idea.png' %}" />
-
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div class="half">
-      </div>
-      <div class="panel-login shadow-z-1">
+{% extends 'base-accounts.html' %}
+{% block title %}
+- Login
+{% endblock %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
         <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group">
-              <div class="row">
-                <div class="col-xs-1">
-                  <i class="mdi-social-person"></i>
-                </div>
-                <div class="col-xs-11">
-                  <div class="form-control-wrapper"><input class="form-control empty" type="text" autofocus><div class="floating-label">Username</div><span class="material-input"></span></div>
-                </div>
+          <div class="col-xs-1">
+            <i class="mdi-social-person"></i>
+          </div>
+          <div class="col-xs-11">
+            <div class="form-control-wrapper"><input id="id_username" name="username" class="form-control empty" type="text" placeholder="Username" autofocus></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-xs-1">
+            <i class="mdi-action-lock"></i>
+          </div>
+          <div class="col-xs-11">
+            <div class="form-control-wrapper"><input id="id_password" name="password" class="form-control empty" type="password" placeholder="Password"></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-control-wrapper">
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-11">
+              <div class="checkbox pull-left">
+                <label>
+                  <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Keep me signed in
+                </label>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-xs-1">
-                  <i class="mdi-action-lock"></i>
-                </div>
-                <div class="col-xs-11">
-                  <div class="form-control-wrapper"><input class="form-control empty" type="password"><div class="floating-label">Password</div><span class="material-input"></span></div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-control-wrapper">
-                <div class="row">
-                  <div class="col-xs-offset-1 col-xs-11">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> Keep me signed in
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a href="{% url 'accounts:join' %}" class="pull-right">Join us!</a>
             </div>
           </div>
         </div>
-        <button class="btn btn-fab btn-raised btn-material-red btn-login"><i class="mdi-navigation-arrow-forward"></i></button>
       </div>
     </div>
-
-    <!-- Jquery -->
-    <script type="text/javascript" src="{% static '4ideas/js/jquery-2.1.4.min.js' %}"></script>
-
-    <!-- Bootstrap JavaScript -->
-    <script type="text/javascript" src="{% static '4ideas/js/bootstrap.min.js' %}"></script>
-
-    <!-- Material JavaScript -->
-    <script type="text/javascript" src="{% static '4ideas/js/material.min.js' %}"></script>
-    <script type="text/javascript" src="{% static '4ideas/js/ripples.min.js' %}"></script>
-  </body>
-</html>
+  </div>
+  <button type="submit" class="btn btn-fab btn-raised btn-material-red btn-login"><i class="mdi-navigation-arrow-forward"></i></button>
+</form>
+{% endblock %}

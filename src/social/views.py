@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from accounts.models import Player
 
-# Create your views here.
+@login_required
+def timeline(request):
+    player = request.user
+    context = {
+        'player': player
+    }
+    return render(request, 'timeline.html', context)

@@ -10,6 +10,10 @@ i {
   margin-top: 5px;
 }
 
+a {
+  margin-top: 12px;
+}
+
 .half {
     position: fixed;
     top: 0;

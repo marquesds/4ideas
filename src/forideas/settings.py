@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # My Apps
-    'core',
     'accounts',
     'social',
 )
@@ -109,3 +108,9 @@ STATIC_ROOT = '/var/www/html'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# Authentication
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'social:timeline'
+LOGOUT_URL = 'accounts:logout'
+AUTH_USER_MODEL = 'accounts.Player'
