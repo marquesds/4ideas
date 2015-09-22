@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from accounts.models import Player
 
 @login_required
-def index(request):
+def home(request):
     player = request.user
     context = {
         'player': player

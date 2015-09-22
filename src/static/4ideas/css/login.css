@@ -1,0 +1,55 @@
+html {
+  height: 96% !important;
+}
+
+body {
+  background-color: #F5F8FA;
+}
+
+i {
+  margin-top: 5px;
+}
+
+.half {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #14B6FF;
+}
+
+.panel-login {
+  position: absolute;
+  padding: 50px;
+  top: 34.5%;
+  left: 30%;
+  width: 40%;
+  height: 30%;
+  background-color: #FFF;
+  border-radius: 2px;
+}
+
+.btn-login {
+  position: absolute;
+  top: 39%;
+  left: 95%;
+}
+
+@media ( max-width: 1080px) {
+  .panel-login {
+    left: 20%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 760px) {
+  .panel-login {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    left: 10%;
+    width: 80%;
+  }
+}
