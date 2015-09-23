@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3vhu-0_@8yz9v=u&4l)n87-28%#w9c12-9=s5nk)4e+5yg=do3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     # My Apps
     'accounts',
     'social',
@@ -103,7 +104,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www/html'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticroot")
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
@@ -114,3 +115,8 @@ LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'social:timeline'
 LOGOUT_URL = 'accounts:logout'
 AUTH_USER_MODEL = 'accounts.Player'
+
+try:
+    from local_settings.py import *
+except:
+    pass

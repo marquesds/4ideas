@@ -153,6 +153,10 @@ h2 {
   margin-top: 100px;
 }
 
+.no-post {
+  text-align: center;
+}
+
 .timeline-centered {
   /* font-family: RobotoDraftRegular; */
   position: relative;
@@ -412,4 +416,13 @@ h2 {
   opacity: .6;
   -ms-filter: alpha(opacity=60);
   filter: alpha(opacity=60);
+}
+
+@media (max-width: 760px) {
+    .btn-fixed {
+      left: 90%;
+    }
+    .post-area {
+      margin-left: 20px;
+    }
 }

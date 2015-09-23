@@ -20,13 +20,3 @@ $(function () {
       $("#timeline-change-cover").stop().fadeOut();
     });
 });
-
-$.notify({
-	message: 'Welcome, Lucas Marques!',
-},{
-  animate: {
-		enter: 'animated tada',
-		exit: 'animated bounceOutDown'
-	},
-  delay: 2000,
-});

@@ -10,9 +10,8 @@ GENDER_CHOICES = (
 )
 
 # Default images
-MALE_PROFILE_IMAGE = settings.STATIC_URL + '4ideas/img/male.png'
-FEMALE_PROFILE_IMAGE = settings.STATIC_URL + '4ideas/img/female.png'
-COVER_IMAGE = settings.STATIC_URL + '4ideas/img/cover.jpeg'
+DEFAULT_PROFILE_IMAGE = settings.STATIC_URL + '4ideas/img/default.png'
+DEFAULT_COVER_IMAGE = settings.STATIC_URL + '4ideas/img/cover.jpeg'
 
 class Player(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=300)
@@ -29,8 +28,8 @@ class Player(AbstractBaseUser, PermissionsMixin):
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default=GENDER_CHOICES[0])
     birth_date = models.DateField('Birth Date', blank=True, null=True)
 
-    profile_image = models.CharField(max_length=500, default=MALE_PROFILE_IMAGE if gender == GENDER_CHOICES[0] else FEMALE_PROFILE_IMAGE)
-    cover_image = models.CharField(max_length=500, default=COVER_IMAGE)
+    profile_image = models.CharField(max_length=500, default=DEFAULT_PROFILE_IMAGE)
+    cover_image = models.CharField(max_length=500, default=DEFAULT_COVER_IMAGE)
 
     # Setting up AbstractBaseUser
     is_active = models.BooleanField('Is active?', blank=True, default=True)
