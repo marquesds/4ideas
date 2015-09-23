@@ -118,6 +118,6 @@ LOGOUT_URL = 'accounts:logout'
 AUTH_USER_MODEL = 'accounts.Player'
 
 try:
-    from local_settings.py import *
+    from forideas.local_settings import *
 except ImportError:
     pass

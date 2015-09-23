@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>4Ideas {% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '4ideas/css/bootstrap.min.css' %}">
+
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="{% static '4ideas/css/material.min.css' %}">
+    <link rel="stylesheet" href="{% static '4ideas/css/material-fullpalette.min.css' %}">
+    <link rel="stylesheet" href="{% static '4ideas/css/ripples.min.css' %}">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static '4ideas/css/animate.css' %}">
+
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="{% static '4ideas/css/hover-min.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static '4ideas/css/error.css' %}">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="{% static '4ideas/img/idea.png' %}" />
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="half">
+      </div>
+      <div class="panel-error shadow-z-1">
+          {% block content %}{% endblock %}
+          <div class="panel-footer">
+            <div class="btns">
+              <a onclick="history.back(-1)" class="btn btn-sm btn-fab btn-fab-mini btn-raised btn-warning"><i class="mdi-navigation-arrow-back"></i></a>
+              <a href="{% url 'social:timeline' %}" class="btn btn-sm btn-fab btn-fab-mini btn-raised btn-warning"><i class="mdi-action-home"></i></a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="{% static '4ideas/js/jquery-2.1.4.min.js' %}"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script type="text/javascript" src="{% static '4ideas/js/bootstrap.min.js' %}"></script>
+
+    <!-- Material JavaScript -->
+    <script type="text/javascript" src="{% static '4ideas/js/material.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '4ideas/js/ripples.min.js' %}"></script>
+  </body>
+</html>

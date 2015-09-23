@@ -21,3 +21,6 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+handler404 = 'social.views.handler404'
+handler500 = 'social.views.handler500'
