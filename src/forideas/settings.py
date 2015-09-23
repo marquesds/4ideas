@@ -15,7 +15,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -23,9 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3vhu-0_@8yz9v=u&4l)n87-28%#w9c12-9=s5nk)4e+5yg=do3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-TEMPLATE_DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -80,9 +77,14 @@ WSGI_APPLICATION = 'forideas.wsgi.application'
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 
+DATABASE_URL = 'postgres://ydnmkvqqqctzdc:WtdhLADAfs5uxkU9qaN5qcyhKQ@ec2-54-204-25-54.compute-1.amazonaws.com:5432/d9cjmmhglqmdo8'
+
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(default=DATABASE_URL)
 }
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Internationalization

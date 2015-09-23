@@ -15,7 +15,7 @@ a {
   top: 26%;
 }
 </style>
-<form method="post">
+<form action="{% url 'accounts:join' %}" method="post">
   {% csrf_token %}
   <div class="row">
     <div class="col-xs-12">
