@@ -1,0 +1,1 @@
+web: gunicorn forideas.wsgi --log-file -
