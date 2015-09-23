@@ -24,8 +24,8 @@ class Player(AbstractBaseUser, PermissionsMixin):
         ]
     )
     email = models.EmailField('Email', max_length=150, unique=True)
-    bio = models.TextField('Bio', blank=True, null=True)
-    gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default=GENDER_CHOICES[0])
+    bio = models.TextField('Bio', max_length=5000, blank=True, null=True)
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
     birth_date = models.DateField('Birth Date', blank=True, null=True)
 
     profile_image = models.CharField(max_length=300, default=DEFAULT_PROFILE_IMAGE)
