@@ -1,2 +1,6 @@
 django
+gunicorn
 ipython
+pytz
+psycopg2
+django-toolbelt

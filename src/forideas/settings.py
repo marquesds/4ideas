@@ -25,8 +25,9 @@ SECRET_KEY = '3vhu-0_@8yz9v=u&4l)n87-28%#w9c12-9=s5nk)4e+5yg=do3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+TEMPLATE_DEBUG = False
 
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -75,14 +76,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'forideas.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+# Heroku Settings
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config()
 }
 
 
@@ -118,5 +117,5 @@ AUTH_USER_MODEL = 'accounts.Player'
 
 try:
     from local_settings.py import *
-except:
+except ImportError:
     pass
