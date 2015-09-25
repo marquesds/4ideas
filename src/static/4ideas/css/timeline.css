@@ -157,6 +157,47 @@ h2 {
   text-align: center;
 }
 
+.panel-user-add {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.user-add {
+  width: 100%;
+  border-radius: 2px;
+}
+
+.user-add img {
+  width: 100%;
+}
+
+.user-add-name {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.user-add a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.user-add .btn {
+  width: 100%;
+  font-size: 12px;
+  margin: 0px;
+}
+
+.user-add i {
+  font-size: 13px;
+}
+
+.user-add-more {
+  margin-top: 10px;
+  text-align: center;
+}
+
 .timeline-centered {
   /* font-family: RobotoDraftRegular; */
   position: relative;

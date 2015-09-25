@@ -145,9 +145,38 @@
     </div>
   </div>
   <div class="col-sm-3 hidden-xs">
-    <div class="panel panel-default shadow-z-1">
+    <div class="panel panel-material-blue-A700 panel-user-add shadow-z-1">
+      <div style="text-align: center;" class="panel-heading">
+        <h4 style="font-size: 14px;" class="panel-title">People you may know</h4>
+      </div>
       <div class="panel-body">
-        <h1>Yo!</h1>
+        <div class="row">
+          <div class="col-xs-6">
+            <div style="margin-left: 10px;" class="user-add shadow-z-1">
+              <a href="#">
+                <img src="{% static '4ideas/img/lucas.jpg' %}"/>
+                <div class="user-add-name">
+                  Lucas Marques
+                </div>
+              </a>
+              <button type="button" class="btn btn-material-green-A700 btn-xs"><i class="mdi-social-person-add"></i> Add</button>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="user-add shadow-z-1">
+              <a href="#">
+                <img src="{% static '4ideas/img/lucas.jpg' %}"/>
+                <div class="user-add-name">
+                  Lucas Marques
+                </div>
+              </a>
+              <button type="button" class="btn btn-danger btn-xs"><i class="mdi-content-clear"></i> Unfriend</button>
+            </div>
+          </div>
+        </div>
+        <div class="user-add-more">
+          <a href="#">More >></a>
+        </div>
       </div>
     </div>
   </div>
