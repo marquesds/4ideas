@@ -22,10 +22,12 @@ def handler500(request):
 @login_required
 def timeline(request):
     player = request.user
+    players = Player.objects.all()
     posts = Post.objects.all()
     post_form = PostForm(player=player)
     context = {
         'player': player,
+        'players': players,
         'posts': posts,
         'post': post_form
     }

@@ -96,6 +96,6 @@ p {
 
 @media (max-width: 600px) {
     .btn-fixed {
-      left: 87%;
+      left: 80% !important;
     }
 }
