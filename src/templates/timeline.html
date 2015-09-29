@@ -35,7 +35,7 @@
     <div class="row">
       <div class="panel panel-default timeline-post shadow-z-1">
         <div class="panel-body">
-          <form action="{% url 'social:post' %}" method="post">
+          <form class="submit-post" action="" method="post">
             {% csrf_token %}
             <div class="row">
               <div class="col-xs-1">
@@ -46,7 +46,7 @@
               </div>
               <div class="col-xs-2">
                 <div>
-                  <button type="submit" class="btn btn-sm btn-fab btn-fab-mini btn-raised btn-success"><i class="mdi-content-send"></i></button>
+                  <button class="btn btn-sm btn-fab btn-fab-mini btn-raised btn-success"><i class="mdi-content-send"></i></button>
                 </div>
               </div>
             </div>
@@ -55,8 +55,8 @@
         </div>
       </div>
 
-      <div class="timeline-centered">
-        <button class="btn btn-fab btn-raised btn-material-red btn-fixed" data-toggle="modal" data-target="#postModal"><i class="mdi-content-add"></i></button>
+      <div id="timeline" class="timeline-centered">
+        <button style="display: none;" class="btn btn-fab btn-raised btn-material-red btn-fixed btn-call-modal" data-toggle="modal" data-target="#postModal"><i class="mdi-content-add"></i></button>
         {% for post in posts %}
         <article class="timeline-entry">
           <div class="timeline-entry-inner">
@@ -122,7 +122,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
           <div class="modal-body">
-            <form action="{% url 'social:post' %}" method="post">
+            <form class="submit-post" action="" method="post">
               {% csrf_token %}
               <div class="row">
                 <div class="col-xs-1">
@@ -133,7 +133,7 @@
                 </div>
                 <div class="col-xs-2">
                   <div>
-                    <button type="submit" class="btn btn-sm btn-fab btn-fab-mini btn-raised btn-success"><i class="mdi-content-send"></i></button>
+                    <button class="btn btn-sm btn-fab btn-fab-mini btn-raised btn-success"><i class="mdi-content-send"></i></button>
                   </div>
                 </div>
               </div>
@@ -151,13 +151,13 @@
       </div>
       <div class="panel-body">
         <div class="row">
-          {% for p in players %}
+          {% for suggestion in suggest_players %}
           <div class="col-xs-6">
             <div class="user-add shadow-z-1">
               <a href="#">
-                <img src="{{ p.profile_image }}"/>
+                <img src="{{ suggestion.profile_image }}"/>
                 <div class="user-add-name">
-                  {{ p }}
+                  {{ suggestion }}
                 </div>
               </a>
               <button type="button" class="btn btn-material-green-A700 btn-xs"><i class="mdi-social-person-add"></i> Add</button>
@@ -176,6 +176,7 @@
 
 {% block js %}
 <script type="text/javascript" src="{% static '4ideas/js/autogrow.min.js' %}"></script>
+<script type="text/javascript" src="{% static '4ideas/js/jquery.cookie.js' %}"></script>
 <script type="text/javascript">
 $('.post-area').autogrow();
 </script>
@@ -192,5 +193,48 @@ exit: 'animated bounceOutDown'
 delay: 2000,
 });
 */
+</script>
+<script type="text/javascript">
+$('.submit-post').on('submit', function(event){
+  var csrftoken = $.cookie('csrftoken');
+
+  function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+  $.ajaxSetup({
+    beforeSend: function (xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+    }
+  });
+
+  $.ajax({
+    url : "{% url 'social:post' %}",
+    type : "POST",
+    data : {
+      content : $('.post-area').val(),
+      csrfmiddlewaretoken: csrftoken
+    },
+
+    // handle a successful response
+    success : function(json) {
+      var html = $('<output>').append($.parseHTML(json));
+      var timeline = $('#timeline', html);
+      $('.post-area').val('');
+      $('#timeline').html(timeline);
+    },
+
+    // handle a non-successful response
+    error : function(xhr,errmsg,err) {
+      $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+      " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+      console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+    }
+  });
+  return false;
+});
+
 </script>
 {% endblock %}

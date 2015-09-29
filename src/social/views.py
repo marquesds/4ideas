@@ -22,12 +22,12 @@ def handler500(request):
 @login_required
 def timeline(request):
     player = request.user
-    players = Player.objects.all()
+    suggest_players = Player.objects.exclude(id=player.id)[:2]
     posts = Post.objects.all()
     post_form = PostForm(player=player)
     context = {
         'player': player,
-        'players': players,
+        'suggest_players': suggest_players,
         'posts': posts,
         'post': post_form
     }
