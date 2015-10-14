@@ -55,3 +55,16 @@ class Player(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = 'Player'
         verbose_name_plural = 'Players'
+
+
+class Friend(models.Model):
+    # Many-to-one relationship. More at:
+    # https://docs.djangoproject.com/en/1.8/topics/db/examples/many_to_one/
+    player = models.ForeignKey(Player)
+
+    def __str__(self):
+        return self.player.name or self.player.username
+
+    class Meta:
+        verbose_name = 'Friend'
+        verbose_name_plural = 'Friends'
